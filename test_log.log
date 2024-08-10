@@ -18,3 +18,13 @@ NoSuchElementError: An element could not be located on the page using the given 
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
     at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
     at AndroidUiautomator2Driver.findElement (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)
+2024-08-10 17:32:37,455 - conftest - INFO - Running test on device: R9HN70VWB5J
+2024-08-10 17:32:40,965 - conftest - INFO - Entered username and password on device: R9HN70VWB5J
+2024-08-10 17:32:42,492 - conftest - INFO - Clicked on login button on device: R9HN70VWB5J
+2024-08-10 17:32:42,633 - conftest - ERROR - Error during steps on device: R9HN70VWB5J - Message: An element could not be located on the page using the given search parameters.
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\a.jamshidi\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)

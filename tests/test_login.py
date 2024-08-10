@@ -1,17 +1,14 @@
-import pytest
 import logging
-from conftest import take_screenshot, create_screenshot_directory
+
+import pytest
+from conftest import setup_logging, create_screenshot_directory, take_screenshot
 from pages.HomePage import HomePage
 from pages.Login.Login_page import LoginPage
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from pages.Login.BiometricPage import Biometric
 from pages.Login.Notif_BottomSheet import Notif_BottomSheet
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-handler = logging.FileHandler("test_log.log")
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+logger = setup_logging()
 
 
 @pytest.mark.smoke
@@ -52,5 +49,5 @@ def test_login_with_biometric(create_driver_fixture, caplog):
 
         except (NoSuchElementException, TimeoutException, AssertionError) as e:
             logger.error(f"Error during steps on device: {device_name} - {str(e)}")
-            take_screenshot(driver, screenshot_dir, f"error_{device_name}")
+            take_screenshot(driver, screenshot_dir, "test_login_with_biometric")
             pytest.fail(f"Test failed on device: {device_name}")

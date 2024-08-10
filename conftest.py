@@ -2,7 +2,7 @@ import datetime
 import pytest
 from utils.driver_setup import get_driver
 import os
-
+import logging
 def pytest_addoption(parser):
     parser.addoption("--device", action="store", default="device1")
 
@@ -14,25 +14,31 @@ def create_driver_fixture(request):
     driver.quit()
 
 
-
+# پیکربندی دایرکتوری اسکرین‌شات‌ها
 def create_screenshot_directory(device_name):
-    # دریافت تاریخ و زمان فعلی
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m-%d_%H-%M-%S")
-
-    # ساختن نام دایرکتوری با فرمت: deviceName_YYYY-MM-DD_HH-MM-SS
     directory_name = f"{device_name}_{timestamp}"
-
-    # مسیر دایرکتوری اسکرین‌شات‌ها
     base_dir = os.path.join(os.getcwd(), 'screenshots')
-
-    # ایجاد مسیر کامل
     full_path = os.path.join(base_dir, directory_name)
     os.makedirs(full_path, exist_ok=True)
-
     return full_path
 
 
-def take_screenshot(driver, path, filename):
-    full_path = os.path.join(path, f"{filename}.png")
+def take_screenshot(driver, path, test_name):
+    filename = f"{test_name}.png"
+    full_path = os.path.join(path, filename)
     driver.save_screenshot(full_path)
+
+
+# پیکربندی لاگینگ
+def setup_logging():
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+
+    handler = logging.FileHandler("test_log.log")
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+
+    logger.addHandler(handler)
+    return logger
