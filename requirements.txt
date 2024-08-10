@@ -1,0 +1,4 @@
+Appium-Python-Client==2.x.x
+pytest==6.x.x
+pytest-xdist==2.x.x
+selenium==4.x.x
