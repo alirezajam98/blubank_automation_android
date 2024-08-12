@@ -1,0 +1,38 @@
+
+{
+  "devices": {
+    "device1": {
+      "platformName": "Android",
+      "deviceName": "Galaxy A11",
+      "udid": "R9HN70VWB5J",
+      "platformVersion": "12.0.0",
+      "automationName": "UiAutomator2",
+      "appPackage": "com.samanpr.blu.dev",
+      "appActivity": "com.samanpr.blu.presentation.BaseActivity",
+      "testGroups": [
+        "group1"
+      ]
+    },
+    "device2": {
+      "platformName": "Android",
+      "deviceName": "Galaxy A10",
+      "udid": "R9WMC06RVLJ",
+      "platformVersion": "11.0.0",
+      "automationName": "UiAutomator2",
+      "appPackage": "com.samanpr.blu.dev",
+      "appActivity": "com.samanpr.blu.presentation.BaseActivity",
+      "testGroups": [
+        "group2"
+      ]
+    }
+  },
+  "testGroups": {
+    "group1": [
+      "tests/test_open_app.py"
+    ],
+    "group2": [
+      "tests/test_login.py"
+
+    ]
+  }
+}

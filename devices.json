@@ -1,11 +1,20 @@
-{
-  "device1": {
-    "platformName": "Android",
-    "deviceName": "Galaxy A11",
-    "udid": "R9HN70VWB5J",
-    "platformVersion": "12.0.0",
-    "automationName": "UiAutomator2",
-    "appPackage": "com.samanpr.blu.dev",
-    "appActivity": "com.samanpr.blu.presentation.BaseActivity"
-  }
-}
+//{
+//  "device1": {
+//    "platformName": "Android",
+//    "deviceName": "Galaxy A11",
+//    "udid": "R9HN70VWB5J",
+//    "platformVersion": "12.0.0",
+//    "automationName": "UiAutomator2",
+//    "appPackage": "com.samanpr.blu.dev",
+//    "appActivity": "com.samanpr.blu.presentation.BaseActivity"
+//  },
+//  "device2": {
+//    "platformName": "Android",
+//    "deviceName": "Galaxy A10s",
+//    "udid": "R9WMC06RVLJ",
+//    "platformVersion": "11.0.0",
+//    "automationName": "UiAutomator2",
+//    "appPackage": "com.samanpr.blu.dev",
+//    "appActivity": "com.samanpr.blu.presentation.BaseActivity"
+//  }
+//}
